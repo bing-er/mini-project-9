@@ -54,8 +54,8 @@ cd mini-project-9
 pip install -r requirements.txt
 
 # Run notebooks in order
-jupyter notebook notebooks/01_exploration.ipynb
-jupyter notebook notebooks/02_baseline.ipynb
+jupyter notebook notebooks/01_exploration_colab.ipynb
+jupyter notebook notebooks/02_baseline_colab.ipynb
 jupyter notebook notebooks/03_transformer.ipynb
 ```
 
@@ -79,7 +79,6 @@ mini-project-9/
 │   ├── 01_exploration.ipynb    # Data exploration & preprocessing (Binger)
 │   ├── 02_baseline.ipynb       # TF-IDF + classifier baseline (Binger)
 │   └── 03_transformer.ipynb    # DistilBERT fine-tuning & analysis (Savina)
-├── results/
 ├── src/
 ├── └── __init__.py 
 ├── .gitignore
