@@ -59,7 +59,7 @@ jupyter notebook notebooks/02_baseline_colab.ipynb
 jupyter notebook notebooks/03_transformer.ipynb
 ```
 
-The dataset is auto-downloaded in `01_exploration.ipynb`. No manual download required.
+The dataset is auto-downloaded in `01_exploration_colab.ipynb`. No manual download required.
 
 ---
 
@@ -78,8 +78,8 @@ mini-project-9/
 │   ├── baseline/
 │   └── DistilBERT/
 ├── notebooks/
-│   ├── 01_exploration.ipynb    # Data exploration & preprocessing (Binger)
-│   ├── 02_baseline.ipynb       # TF-IDF + classifier baseline (Binger)
+│   ├── 01_exploration_colab.ipynb    # Data exploration & preprocessing (Binger)
+│   ├── 02_baseline_colab.ipynb       # TF-IDF + classifier baseline (Binger)
 │   └── 03_transformer.ipynb    # DistilBERT fine-tuning & analysis (Savina)
 ├── src/
 │   └── __init__.py 
