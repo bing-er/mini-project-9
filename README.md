@@ -41,7 +41,7 @@ Davidson et al. (2017). *Automated Hate Speech Detection and the Problem of Offe
 
 ### Option 1: Google Colab (recommended)
 
-Upload the notebooks to Colab and run cells in order. The dataset is automatically downloaded in `01_exploration.ipynb`.
+Upload the notebooks to Colab and run cells in order. The dataset is automatically downloaded in `01_exploration_colab.ipynb`.
 
 ### Option 2: Local
 
