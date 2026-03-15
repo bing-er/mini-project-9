@@ -113,14 +113,14 @@ mini-project-9/
 
 ## Team Contributions
 
-| Task | Owner |
-|---|---|
-| Part 1: Data Exploration & Preprocessing | Binger Yu |
-| Part 2: TF-IDF Baseline (LR, SVM, RF) | Binger Yu |
-| GitHub Repository & README | Binger Yu |
-| Part 3: DistilBERT Fine-tuning | Savina |
-| Part 4: Comparative & Error Analysis | Savina |
-| Part 5: Production Workflow Design | Savina |
+| Task | Owner      |
+|---|------------|
+| Part 1: Data Exploration & Preprocessing | Binger Yu  |
+| Part 2: TF-IDF Baseline (LR, SVM, RF) | Binger Yu  |
+| GitHub Repository & README | Binger Yu  |
+| Part 3: DistilBERT Fine-tuning | Savina Cai |
+| Part 4: Comparative & Error Analysis | Savina Cai |
+| Part 5: Production Workflow Design | Savina Cai |
 
 ---
 
