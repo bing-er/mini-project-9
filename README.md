@@ -75,6 +75,8 @@ mini-project-9/
 ├── ├── test.csv                # 15% split (stratified)
 ├── └── download_dataset.txt    # Instructions for downloading the dataset
 ├── figures/
+├── ├── baseline/
+├── ├── DistilBERT/
 ├── notebooks/
 │   ├── 01_exploration.ipynb    # Data exploration & preprocessing (Binger)
 │   ├── 02_baseline.ipynb       # TF-IDF + classifier baseline (Binger)
@@ -92,15 +94,20 @@ mini-project-9/
 
 > **Note:** Transformer results to be filled in after Part 3 is complete.
 
-| Metric | TF-IDF + LR Baseline | DistilBERT Fine-tuned |
-|---|---|---|
-| Overall Accuracy | TBD | TBD |
-| Macro F1 | TBD | TBD |
-| F1 — Hate Speech (Class 0) | TBD | TBD |
-| F1 — Offensive (Class 1) | TBD | TBD |
-| F1 — Neither (Class 2) | TBD | TBD |
+| Metric | TF-IDF + LR Baseline | DistilBERT Fine-tuned | Improvement
+|---|---|---|---|
+| Overall Accuracy | 0.8701 | 0.9080 | +3.79% |
+| Macro F1 | 0.7301 | 0.7828 | +5.27% |
+| F1 — Hate Speech (Class 0) | 0.4137 | 0.5115 | +9.78% |
+| F1 — Offensive (Class 1) | 0.9195 | 0.9448 | +2.53% |
+| F1 — Neither (Class 2) | 0.8571 | 0.8920 | +3.49% |
 
-**Key finding:** *(To be completed after Part 3)*
+**Key finding:**
+1. Transformer Superiority: The DistilBERT model consistently outperformed the TF-IDF baseline across all metrics. The most significant improvement was observed in the minority class (Hate Speech), where the F1 score increased by nearly 10 percentage points (from 0.41 to 0.51). This demonstrates the transformer's ability to capture semantic context and subtle differences between hate speech and general offensive language, which bag-of-words approaches fail to recognize.
+
+2. Production Workflow Efficiency: By implementing a confidence-based, three-tier workflow (Auto-Remove, Auto-Flag, Auto-Approve, and Human Review), we achieved a 97.0% automation rate. At a scale of 100,000 posts per day, the system reduces the required human review volume to just 3.0% (3,039 posts), requiring only 1.9 full-time equivalent (FTE) reviewers compared to 62 FTEs for manual review.
+
+
 
 ---
 
