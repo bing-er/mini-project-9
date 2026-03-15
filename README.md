@@ -41,7 +41,7 @@ Davidson et al. (2017). *Automated Hate Speech Detection and the Problem of Offe
 
 ### Option 1: Google Colab (recommended)
 
-Upload the notebooks to Colab and run cells in order. The dataset is automatically downloaded in `01_exploration.ipynb`.
+Upload the notebooks to Colab and run cells in order. The dataset is automatically downloaded in `01_exploration_colab.ipynb`.
 
 ### Option 2: Local
 
@@ -59,7 +59,7 @@ jupyter notebook notebooks/02_baseline_colab.ipynb
 jupyter notebook notebooks/03_transformer.ipynb
 ```
 
-The dataset is auto-downloaded in `01_exploration.ipynb`. No manual download required.
+The dataset is auto-downloaded in `01_exploration_colab.ipynb`. No manual download required.
 
 ---
 
@@ -69,20 +69,20 @@ The dataset is auto-downloaded in `01_exploration.ipynb`. No manual download req
 mini-project-9/
 
 ├── data/
-├── ├── labeled_data.csv        # Raw dataset (auto-downloaded)
-├── ├── train.csv               # 70% split (stratified)
-├── ├── val.csv                 # 15% split (stratified)
-├── ├── test.csv                # 15% split (stratified)
-├── └── download_dataset.txt    # Instructions for downloading the dataset
+│   ├── labeled_data.csv        # Raw dataset (auto-downloaded)
+│   ├── train.csv               # 70% split (stratified)
+│   ├── val.csv                 # 15% split (stratified)
+│   ├── test.csv                # 15% split (stratified)
+│   └── download_dataset.txt    # Instructions for downloading the dataset
 ├── figures/
-├── ├── baseline/
-├── ├── DistilBERT/
+│   ├── baseline/
+│   └── DistilBERT/
 ├── notebooks/
-│   ├── 01_exploration.ipynb    # Data exploration & preprocessing (Binger)
-│   ├── 02_baseline.ipynb       # TF-IDF + classifier baseline (Binger)
+│   ├── 01_exploration_colab.ipynb    # Data exploration & preprocessing (Binger)
+│   ├── 02_baseline_colab.ipynb       # TF-IDF + classifier baseline (Binger)
 │   └── 03_transformer.ipynb    # DistilBERT fine-tuning & analysis (Savina)
 ├── src/
-├── └── __init__.py 
+│   └── __init__.py 
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
@@ -92,20 +92,18 @@ mini-project-9/
 
 ## Results Summary
 
-> **Note:** Transformer results to be filled in after Part 3 is complete.
-
-| Metric | TF-IDF + LR Baseline | DistilBERT Fine-tuned | Improvement
-|---|---|---|---|
-| Overall Accuracy | 0.8701 | 0.9080 | +3.79% |
-| Macro F1 | 0.7301 | 0.7828 | +5.27% |
-| F1 — Hate Speech (Class 0) | 0.4137 | 0.5115 | +9.78% |
-| F1 — Offensive (Class 1) | 0.9195 | 0.9448 | +2.53% |
-| F1 — Neither (Class 2) | 0.8571 | 0.8920 | +3.49% |
+| Metric | TF-IDF + LR Baseline | DistilBERT Fine-tuned | Improvement 
+|---|---|---|-------------|
+| Overall Accuracy | 0.8701 | 0.9080 | +4.35%      |
+| Macro F1 | 0.7301 | 0.7828 | +7.22%      |
+| F1 — Hate Speech (Class 0) | 0.4137 | 0.5115 | +23.65%     |
+| F1 — Offensive (Class 1) | 0.9195 | 0.9448 | +2.75%      |
+| F1 — Neither (Class 2) | 0.8571 | 0.8920 | +4.07%      |
 
 **Key finding:**
-1. Transformer Superiority: The DistilBERT model consistently outperformed the TF-IDF baseline across all metrics. The most significant improvement was observed in the minority class (Hate Speech), where the F1 score increased by nearly 10 percentage points (from 0.41 to 0.51). This demonstrates the transformer's ability to capture semantic context and subtle differences between hate speech and general offensive language, which bag-of-words approaches fail to recognize.
+1. Transformer Superiority: The DistilBERT model consistently outperformed the TF-IDF baseline across all metrics. The most significant improvement was observed in the minority class (Hate Speech), where the F1 score increased by 23.65% relative (from 0.41 to 0.51). This demonstrates the transformer's ability to capture semantic context and subtle differences between hate speech and general offensive language, which bag-of-words approaches fail to recognize.
 
-2. Production Workflow Efficiency: By implementing a confidence-based, three-tier workflow (Auto-Remove, Auto-Flag, Auto-Approve, and Human Review), we achieved a 97.0% automation rate. At a scale of 100,000 posts per day, the system reduces the required human review volume to just 3.0% (3,039 posts), requiring only 1.9 full-time equivalent (FTE) reviewers compared to 62 FTEs for manual review.
+2. Production Workflow Efficiency: By implementing a confidence-based, four-tier workflow (Auto-Remove, Auto-Flag, Auto-Approve, and Human Review), we achieved a 97.0% automation rate. At a scale of 100,000 posts per day, the system reduces the required human review volume to just 3.0% (3,039 posts), requiring only 1.9 full-time equivalent (FTE) reviewers compared to 62 FTEs for manual review.
 
 
 
@@ -113,23 +111,17 @@ mini-project-9/
 
 ## Team Contributions
 
-| Task | Owner |
-|---|---|
-| Part 1: Data Exploration & Preprocessing | Binger Yu |
-| Part 2: TF-IDF Baseline (LR, SVM, RF) | Binger Yu |
-| GitHub Repository & README | Binger Yu |
-| Part 3: DistilBERT Fine-tuning | Savina |
-| Part 4: Comparative & Error Analysis | Savina |
-| Part 5: Production Workflow Design | Savina |
+| Task                                       | Owner      |
+|--------------------------------------------|------------|
+| Part 1: Data Exploration & Preprocessing   | Binger Yu  |
+| Part 2: TF-IDF Baseline (LR, SVM, RF)      | Binger Yu  |
+| GitHub Repository, README & Report Writing | Binger Yu  |
+| Part 3: DistilBERT Fine-tuning             | Savina Cai |
+| Part 4: Comparative & Error Analysis       | Savina Cai |
+| Part 5: Production Workflow Design         | Savina Cai |
 
 ---
 
 ## References
 
-1. Davidson, T., Warmsley, D., Macy, M., & Weber, I. (2017). Automated Hate Speech Detection and the Problem of Offensive Language. *Proceedings of ICWSM*. https://arxiv.org/abs/1703.04009
-
-2. Hugging Face. (2024). Fine-tuning a pretrained model. https://huggingface.co/docs/transformers/training
-
-3. Scikit-learn. (2024). TfidfVectorizer. https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
-
-4. PyTorch. (2024). CrossEntropyLoss. https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
+Davidson, T., Warmsley, D., Macy, M., \& Weber, I. (2017). Automated hate speech detection and the problem of offensive language. \textit{Proceedings of the 11th International AAAI Conference on Web and Social Media (ICWSM)}, 512--515. https://github.com/t-davidson/hate-speech-and-offensive-language
